@@ -10,6 +10,7 @@ public abstract class MenuItem
     private int _cost;
     private string _name;
     MenuGroup _menuGroup;
+    private int menunumber;
     public static int totalItemCount = 0;
 
     public int Cost
@@ -32,7 +33,13 @@ public abstract class MenuItem
     public MenuItem()
     {
         totalItemCount++;
-     }
+    }
+
+    public void PrintInfo()
+    {
+        Console.WriteLine($"{menunumber}, {Name}[{MenuGroup}]  가격:  {Cost}원");
+    }
+    
 }
 
 
