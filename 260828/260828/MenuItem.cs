@@ -1,14 +1,33 @@
 ﻿public enum MenuGroup
 {
     None,
-    Beverage,
-    Bakery
+    음료,
+    베이커리
 }
 
 public abstract class MenuItem
 {
-    
+    private int _cost;
+    private string _name;
+    MenuGroup _menuGroup;
     public static int totalItemCount = 0;
+
+    public int Cost
+    {
+        get { return _cost; }
+    }
+
+    public string Name
+    {
+        get { return _name; }
+        
+    }
+
+    public MenuGroup MenuGroup
+    {
+        get { return _menuGroup; }
+        
+    }
     
     public MenuItem()
     {
@@ -21,25 +40,16 @@ public abstract class MenuItem
 public abstract class Beverage : MenuItem
 {
     private MenuGroup _menuGroup;
-    /*
-    public static int beverageCount = 0;
+ 
     public Beverage()
     {
-        beverageCount++;
-    }
-    public int WaffleComboCount
-    {
-        get { return beverageCount; }
-    }
-    */
-    public Beverage()
-    {
-        _menuGroup = MenuGroup.Beverage;
+        _menuGroup = MenuGroup.음료;
     }
 
-    public MenuGroup GroupName
+    public MenuGroup MenuGroup
     {
         get { return _menuGroup; }
+        
     }
     
 
@@ -50,13 +60,16 @@ public abstract class Bakery : MenuItem
     private MenuGroup _menuGroup;
     public Bakery()
     {
-        _menuGroup = MenuGroup.Bakery;
+        _menuGroup = MenuGroup.베이커리;
     }
 
-    public MenuGroup GroupName
+    public MenuGroup MenuGroup
     {
         get { return _menuGroup; }
+        
     }
 }
+
+
 
 
