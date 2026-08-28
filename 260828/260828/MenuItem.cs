@@ -1,4 +1,6 @@
-﻿public enum MenuGroup
+﻿using System.Diagnostics;
+
+public enum MenuGroup
 {
     None,
     음료,
@@ -10,7 +12,7 @@ public abstract class MenuItem
     private int _cost;
     private string _name;
     MenuGroup _menuGroup;
-    private int menunumber;
+    private int _menunumber = 0;
     public static int totalItemCount = 0;
 
     public int Cost
@@ -29,7 +31,10 @@ public abstract class MenuItem
         get { return _menuGroup; }
         
     }
-    
+    public int MenuNumber
+    {
+        get { return _menunumber; }
+    }
     public MenuItem()
     {
         totalItemCount++;
@@ -37,7 +42,8 @@ public abstract class MenuItem
 
     public void PrintInfo()
     {
-        Console.WriteLine($"{menunumber}, {Name}[{MenuGroup}]  가격:  {Cost}원");
+        Console.WriteLine($"{MenuNumber}, {Name}[{MenuGroup}]  가격:  {Cost}원");
+        Console.WriteLine("을 선택하셨습니다.");
     }
     
 }

@@ -1,6 +1,6 @@
 ﻿public class Cookie : Bakery
 {
-    private int menunumber = 6;
+    private int _menunumber = 6;
     private string _name = "쿠키";
     private int _cost = 1000;
     private float packCost;
@@ -34,18 +34,22 @@
     {
         get { return _cost; }
     }
-    
+    public int MenuNumber
+    {
+        get { return _menunumber; }
+    }
     void PrintInfo()
     {
         Console.WriteLine($"[할인 품목]");
         Console.WriteLine($"({discounCondition+1}개이상 구매시 {discounRate}% 가격으로 제공) ");
-        Console.WriteLine($"{menunumber}, {Name}[{MenuGroup}]  가격:  {Cost}원");
+        Console.WriteLine($"{MenuNumber}, {Name}[{MenuGroup}]  가격:  {Cost}원");
+        Console.WriteLine("을 선택하셨습니다.");
     }
 }
 
 public class SaltBread : Bakery
 {
-    private int menunumber = 7;
+    private int _menunumber = 7;
     private string _name = "소금빵";
     private int _cost = 2000;
     public static int _count = 0;
@@ -69,17 +73,22 @@ public class SaltBread : Bakery
     {
         get { return _cost; }
     }
+    public int MenuNumber
+    {
+        get { return _menunumber; }
+    }
 
     void PrintInfo()
     {
        
-        Console.WriteLine($"{menunumber}, {Name}[{MenuGroup}]  가격:  {Cost}원");
+        Console.WriteLine($"{MenuNumber}, {Name}[{MenuGroup}]  가격:  {Cost}원");
+        Console.WriteLine("을 선택하셨습니다.");
     }
 }
 
 public class Waffle : Bakery
 {
-    private int menunumber = 8;
+    private int _menunumber = 8;
     private string _name = "와플";
     private int _cost = 1500;
     public static int _count = 0;
@@ -97,9 +106,15 @@ public class Waffle : Bakery
     {
         get { return _cost; }
     }
+    
+    public int MenuNumber
+    {
+        get { return _menunumber; }
+    }
 
     void PrintInfo()
     {
-        Console.WriteLine($"{menunumber}, {Name}[{MenuGroup}]  가격:  {Cost}원");
+        Console.WriteLine($"{MenuNumber}, {Name}[{MenuGroup}]  가격:  {Cost}원");
+        Console.WriteLine("을 선택하셨습니다.");
     }
 }
