@@ -6,11 +6,21 @@ public class Americano : Beverage
     private int _cost = 2000;
     public static int _count = 0;
     private int totalPrice;
+    const int discounCondition = 2;
 
     public Americano()
     {
         _count++;
-        totalPrice = _cost *  _count;
+
+        if ((_count % discounCondition) == 0)
+        {
+            totalPrice = (_cost * _count) - _cost;
+        }
+        else
+        {
+            totalPrice = (_cost * _count);
+        }
+        
     }
 
     public int TotalPrice

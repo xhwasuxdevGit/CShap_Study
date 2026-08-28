@@ -2,11 +2,20 @@
 {
     private string _name = "쿠키";
     private int _cost = 1000;
+    private float packCost;
+    const int discounCondition = 2;
+    
     public static int _count = 0;
     private int totalPrice;
     public Cookie()
     {
         _count++;
+        
+        if (_count > discounCondition)
+        {
+            packCost = ((_count * _cost) / 100) * 75;
+            _cost = (int)packCost;
+        }
         totalPrice = _cost *  _count;
     }
 
@@ -23,16 +32,6 @@
     public int Cost
     {
         get { return _cost; }
-    }
-
-    public int CookieCost
-    {
-        get { return _cost; }
-    }
-
-    public int CookieCount
-    {
-        get { return _count; }
     }
     
 }
