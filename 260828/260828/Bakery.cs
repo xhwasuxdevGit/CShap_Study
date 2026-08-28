@@ -18,6 +18,8 @@
             _cost = (int)packCost;
         }
         totalPrice = _cost *  _count;
+        
+        PrintInfo();
     }
 
     public int TotalPrice
@@ -58,6 +60,7 @@ public class SaltBread : Bakery
     {
         _count++;
         totalPrice = _cost *  _count;
+        PrintInfo();
     }
 
     public int TotalPrice
@@ -84,6 +87,7 @@ public class SaltBread : Bakery
         Console.WriteLine($"{MenuNumber}, {Name}[{MenuGroup}]  가격:  {Cost}원");
         Console.WriteLine("을 선택하셨습니다.");
     }
+    
 }
 
 public class Waffle : Bakery
@@ -97,6 +101,8 @@ public class Waffle : Bakery
     {
         _count++;
         totalPrice = _cost *  _count;
+        PrintInfo();
+        
     }
     public string Name
     {

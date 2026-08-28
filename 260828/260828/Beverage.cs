@@ -23,6 +23,7 @@ public class Americano : Beverage
             totalPrice = (_cost * _count);
         }
         
+        PrintInfo();
     }
 
     public int TotalPrice
@@ -66,6 +67,7 @@ public class Cafflatte : Beverage
     {
         _count++;
         totalPrice = _cost *  _count;
+        PrintInfo();
     }
 
     public int TotalPrice
@@ -105,6 +107,7 @@ public class IceTea : Beverage
     {
         _count++;
         totalPrice = _cost *  _count;
+        PrintInfo();
     }
 
     public int TotalPrice
@@ -143,6 +146,7 @@ public class GreenTea : Beverage
     {
         _count++;
         totalPrice = _cost *  _count;
+        PrintInfo();
     }
 
     public int TotalPrice
@@ -180,6 +184,7 @@ public class ChocoLatte : Beverage
     {
         _count++;
         totalPrice = _cost *  _count;
+        PrintInfo();
     }
 
     public int TotalPrice

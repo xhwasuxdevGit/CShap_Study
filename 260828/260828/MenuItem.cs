@@ -38,6 +38,7 @@ public abstract class MenuItem
     public MenuItem()
     {
         totalItemCount++;
+        PrintInfo();
     }
 
     public void PrintInfo()
