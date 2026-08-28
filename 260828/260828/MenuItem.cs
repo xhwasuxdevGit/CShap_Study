@@ -27,26 +27,27 @@ public abstract class Beverage : MenuItem
         _cost = itemCost;
     }
     
-    public int Cost
-    {
-        get { return _cost; }
-    }
+
     
 }
 // 베이커리 대분류 추가
 public abstract class Bakery : MenuItem
 {
-    public static int totalBeverageCount = 0;
-    
+  
     public Bakery(int itemCost) : base(itemCost)
     {
         _cost = itemCost;
     }
     
-    public int Cost
-    {
-        get { return _cost; }
-    }
+
     
 }
 
+public abstract class SetMenu : MenuItem
+{
+    public SetMenu(int itemCost) : base(itemCost)
+    {
+        _cost = itemCost;
+    }
+    
+}

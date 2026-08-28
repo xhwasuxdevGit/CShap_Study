@@ -3,7 +3,7 @@
 public class Americano : Beverage
 {
     private string _name = "아메리카노";
-
+    
     public string Name
     {
         get { return _name; }
@@ -13,8 +13,13 @@ public class Americano : Beverage
     {
         _cost = itemCost;
     }
-    
+
     public int Cost
+    {
+        get { return _cost; }
+    }
+    
+    public int americanoCost
     {
         get { return _cost; }
     }
@@ -33,11 +38,6 @@ public class Cafflatte : Beverage
     {
         _cost = itemCost;
     }
-    
-    public int Cost
-    {
-        get { return _cost; }
-    }
 }
 
 public class IceTea : Beverage
@@ -54,10 +54,6 @@ public class IceTea : Beverage
         _cost = itemCost;
     }
     
-    public int Cost
-    {
-        get { return _cost; }
-    }
 }
 
 public class GreenTea : Beverage
@@ -74,10 +70,6 @@ public class GreenTea : Beverage
         _cost = itemCost;
     }
     
-    public int Cost
-    {
-        get { return _cost; }
-    }
 }
 
 public class ChocoLatte : Beverage
@@ -93,9 +85,5 @@ public class ChocoLatte : Beverage
     {
         _cost = itemCost;
     }
-    
-    public int Cost
-    {
-        get { return _cost; }
-    }
+
 }

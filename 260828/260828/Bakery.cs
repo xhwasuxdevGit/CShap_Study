@@ -11,11 +11,7 @@
     {
         _cost = itemCost;
     }
-    
-    public int Cost
-    {
-        get { return _cost; }
-    }
+
 }
 
 public class SaltBread : Bakery
@@ -31,11 +27,7 @@ public class SaltBread : Bakery
     {
         _cost = itemCost;
     }
-    
-    public int Cost
-    {
-        get { return _cost; }
-    }
+
 }
 
 public class Waffle : Bakery
@@ -46,14 +38,10 @@ public class Waffle : Bakery
     {
         get { return _name; }
     }
-    
+
     public Waffle(int itemCost = 1500) : base(itemCost)
     {
         _cost = itemCost;
     }
-    
-    public int Cost
-    {
-        get { return _cost; }
-    }
+
 }
