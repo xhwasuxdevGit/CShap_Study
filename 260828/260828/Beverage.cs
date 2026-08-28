@@ -62,7 +62,7 @@ public class IceTea : Beverage
 
 public class GreenTea : Beverage
 {
-    private string _name = "아이스티";
+    private string _name = "녹차";
 
     public string Name
     {
@@ -82,7 +82,7 @@ public class GreenTea : Beverage
 
 public class ChocoLatte : Beverage
 {
-    private string _name = "아이스티";
+    private string _name = "쵸코라떼";
 
     public string Name
     {
