@@ -3,23 +3,18 @@
 public class Americano : Beverage
 {
     private string _name = "아메리카노";
+    private int _cost = 2000;
     
     public string Name
     {
         get { return _name; }
     }
-    
-    public Americano(int itemCost = 2000) : base(itemCost)
-    {
-        _cost = itemCost;
-    }
-
     public int Cost
     {
         get { return _cost; }
     }
     
-    public int americanoCost
+    public int AmericanoCost
     {
         get { return _cost; }
     }
@@ -28,30 +23,30 @@ public class Americano : Beverage
 public class Cafflatte : Beverage
 {
     private string _name = "카페라떼";
-
+    private int _cost = 2000;
     public string Name
     {
         get { return _name; }
     }
-    
-    public Cafflatte(int itemCost = 3000) : base(itemCost)
+    public int Cost
     {
-        _cost = itemCost;
+        get { return _cost; }
     }
+    
+ 
 }
 
 public class IceTea : Beverage
 {
     private string _name = "아이스티";
-
+    private int _cost = 3000;
     public string Name
     {
         get { return _name; }
     }
-    
-    public IceTea(int itemCost = 3000) : base(itemCost)
+    public int Cost
     {
-        _cost = itemCost;
+        get { return _cost; }
     }
     
 }
@@ -59,31 +54,30 @@ public class IceTea : Beverage
 public class GreenTea : Beverage
 {
     private string _name = "녹차";
-
+    private int _cost = 2500;
     public string Name
     {
         get { return _name; }
     }
-    
-    public GreenTea(int itemCost = 2500) : base(itemCost)
+    public int Cost
     {
-        _cost = itemCost;
+        get { return _cost; }
     }
+
     
 }
 
 public class ChocoLatte : Beverage
 {
     private string _name = "쵸코라떼";
-
+    private int _cost = 3500;
     public string Name
     {
         get { return _name; }
     }
-    
-    public ChocoLatte(int itemCost = 3500) : base(itemCost)
+    public int Cost
     {
-        _cost = itemCost;
+        get { return _cost; }
     }
-
+    
 }

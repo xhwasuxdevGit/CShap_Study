@@ -6,26 +6,28 @@
     {
         get { return _name; }
     }
+
+    private int _cost = 1000;
     
-    public Cookie(int itemCost = 1000) : base(itemCost)
+    public int Cost
     {
-        _cost = itemCost;
+        get { return _cost; }
     }
+
 
 }
 
 public class SaltBread : Bakery
 {
     private string _name = "소금빵";
-
+    private int _cost = 2000;
     public string Name
     {
         get { return _name; }
     }
-    
-    public SaltBread(int itemCost = 2000) : base(itemCost)
+    public int Cost
     {
-        _cost = itemCost;
+        get { return _cost; }
     }
 
 }
@@ -33,15 +35,14 @@ public class SaltBread : Bakery
 public class Waffle : Bakery
 {
     private string _name = "와플";
-
+    private int _cost = 1500;
     public string Name
     {
         get { return _name; }
     }
-
-    public Waffle(int itemCost = 1500) : base(itemCost)
+    public int Cost
     {
-        _cost = itemCost;
+        get { return _cost; }
     }
 
 }
