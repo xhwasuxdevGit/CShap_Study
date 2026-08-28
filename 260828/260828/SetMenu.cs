@@ -16,3 +16,26 @@
        get { return _cost; }
     }
 }
+
+public class CookiePackSet : Cookie
+{
+    private string _name = "쿠키 가성비 세트";
+    private int _cost;
+    private float packCost;
+    
+    public CookiePackSet()
+    {
+        if (CookieCount > 2)
+        {
+            packCost = ((CookieCost * CookieCost) / 100) * 75;
+            _cost = (int)packCost;
+        }
+    }
+    
+    public int Cost
+    {
+        get { return _cost; }
+    }
+    
+    
+}
