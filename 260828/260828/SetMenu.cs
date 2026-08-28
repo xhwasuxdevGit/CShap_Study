@@ -37,5 +37,4 @@ public class CookiePackSet : Cookie
         get { return _cost; }
     }
     
-    
 }

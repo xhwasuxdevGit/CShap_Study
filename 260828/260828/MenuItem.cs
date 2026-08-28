@@ -1,34 +1,62 @@
-﻿// 세부 메뉴 생성을 위한 추상 클래스 생성
+﻿public enum MenuGroup
+{
+    None,
+    Beverage,
+    Bakery
+}
 
 public abstract class MenuItem
 {
+    
     public static int totalItemCount = 0;
     
     public MenuItem()
     {
         totalItemCount++;
-    }
+     }
 }
 
 
-// 음료 대분류 추가
+
 public abstract class Beverage : MenuItem
 {
-    public static int totalBeverageCount = 0;
-
+    private MenuGroup _menuGroup;
+    /*
+    public static int beverageCount = 0;
     public Beverage()
     {
-        totalBeverageCount++;
+        beverageCount++;
+    }
+    public int WaffleComboCount
+    {
+        get { return beverageCount; }
+    }
+    */
+    public Beverage()
+    {
+        _menuGroup = MenuGroup.Beverage;
+    }
+
+    public MenuGroup GroupName
+    {
+        get { return _menuGroup; }
     }
     
+
 }
 // 베이커리 대분류 추가
 public abstract class Bakery : MenuItem
 {
- 
+    private MenuGroup _menuGroup;
+    public Bakery()
+    {
+        _menuGroup = MenuGroup.Bakery;
+    }
+
+    public MenuGroup GroupName
+    {
+        get { return _menuGroup; }
+    }
 }
 
-public abstract class SetMenu : MenuItem
-{
- 
-}
+
