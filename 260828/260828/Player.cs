@@ -1,0 +1,69 @@
+﻿using System;
+using System.Collections.Generic;
+
+
+public class Player
+{
+    private int money;
+    private int menuNumber;
+
+    private List<MenuItem> cart = new List<MenuItem>();
+ 
+    public void InputMenu()
+    {
+        int menuNumber = ConsoleInput.ReadIntInRange("메뉴 번호를 입력해 주세요 ", 1, 8);
+        int menuMount = ConsoleInput.ReadIntInRange("갯수를 입력해주세요 ", 1, 5);
+        
+        for (int i = 0; i < menuMount; i++)
+        { 
+            switch (menuNumber)
+            {
+                case 1:
+                    cart.Add(new Americano());
+                    break;
+                case 2:
+                    cart.Add(new CafeLatte());
+                    break;
+                case 3:
+                    cart.Add(new IceTea());
+                    break;
+                case 4:
+                    cart.Add(new GreenTea());
+                    break;
+                case 5:
+                    cart.Add(new ChocoLatte());
+                    break;
+                case 6:
+                    cart.Add(new Cookie());
+                    break;
+                case 7:
+                    cart.Add(new SaltBread());
+                    break;
+                case 8:
+                    cart.Add(new Waffle());
+                    break;
+                default:
+                    break;
+            }
+            
+        }
+
+
+        for (int i = 0; i < cart.Count; i++)
+        {
+            Console.Write($" {} / ");
+
+        }
+        
+        Console.WriteLine();
+        Console.WriteLine($"장바구니에 담긴 메뉴 총 {cart.Count}개");
+
+
+    }
+    
+    public void PrintCart()
+    {
+        Console.Clear();
+    }
+    
+}

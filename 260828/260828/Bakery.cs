@@ -1,126 +1,49 @@
-﻿public class Cookie : Bakery
+﻿using System;
+
+public class Cookie : Bakery
 {
-    private int _menunumber = 6;
-    private string _name = "쿠키";
-    private int _cost = 1000;
-    private float packCost;
-    private const int discounCondition = 2;
-    private const int discounRate = 75;
-    public static int _count = 0;
-    private int totalPrice;
-    public Cookie()
+    static Cookie()
     {
-        _count++;
-        
-        if (_count > discounCondition)
-        {
-            packCost = ((_count * _cost) / 100) * discounRate;
-            _cost = (int)packCost;
-        }
-        totalPrice = _cost *  _count;
-        
-        PrintInfo();
-    }
-
-    public int TotalPrice
-    {
-        get { return totalPrice; }
-    }
-
-    public string Name
-    {
-        get { return _name; }
+        number = 6;
+        name = "쿠키";
+        cost = 1000;
     }
     
-    public int Cost
+    public static void PrintMenu()
     {
-        get { return _cost; }
+        Console.WriteLine($"[{category}] {number}. {name}  가격: {cost}원 ");
     }
-    public int MenuNumber
-    {
-        get { return _menunumber; }
-    }
-    void PrintInfo()
-    {
-        Console.WriteLine($"[할인 품목]");
-        Console.WriteLine($"({discounCondition+1}개이상 구매시 {discounRate}% 가격으로 제공) ");
-        Console.WriteLine($"{MenuNumber}, {Name}[{MenuGroup}]  가격:  {Cost}원");
-        Console.WriteLine("을 선택하셨습니다.");
-    }
+    
 }
 
 public class SaltBread : Bakery
 {
-    private int _menunumber = 7;
-    private string _name = "소금빵";
-    private int _cost = 2000;
-    public static int _count = 0;
-    private int totalPrice;
-    public SaltBread()
+    static SaltBread()
     {
-        _count++;
-        totalPrice = _cost *  _count;
-        PrintInfo();
-    }
-
-    public int TotalPrice
-    {
-        get { return totalPrice; }
+        number = 7;
+        name = "소금빵";
+        cost = 2000;
     }
     
-    public string Name
+    public static void PrintMenu()
     {
-        get { return _name; }
-    }
-    public int Cost
-    {
-        get { return _cost; }
-    }
-    public int MenuNumber
-    {
-        get { return _menunumber; }
-    }
-
-    void PrintInfo()
-    {
-       
-        Console.WriteLine($"{MenuNumber}, {Name}[{MenuGroup}]  가격:  {Cost}원");
-        Console.WriteLine("을 선택하셨습니다.");
+        Console.WriteLine($"[{category}] {number}. {name}  가격: {cost}원 ");
     }
     
 }
 
 public class Waffle : Bakery
 {
-    private int _menunumber = 8;
-    private string _name = "와플";
-    private int _cost = 1500;
-    public static int _count = 0;
-    private int totalPrice;
-    public Waffle()
+    static Waffle()
     {
-        _count++;
-        totalPrice = _cost *  _count;
-        PrintInfo();
-        
-    }
-    public string Name
-    {
-        get { return _name; }
-    }
-    public int Cost
-    {
-        get { return _cost; }
+        number = 8;
+        name = "와플";
+        cost = 1500;
     }
     
-    public int MenuNumber
+    public static void PrintMenu()
     {
-        get { return _menunumber; }
+        Console.WriteLine($"[{category}] {number}. {name}  가격: {cost}원 ");
     }
-
-    void PrintInfo()
-    {
-        Console.WriteLine($"{MenuNumber}, {Name}[{MenuGroup}]  가격:  {Cost}원");
-        Console.WriteLine("을 선택하셨습니다.");
-    }
+    
 }

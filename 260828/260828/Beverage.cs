@@ -1,211 +1,120 @@
-﻿// 세부 음료 클래스
-
-public class Americano : Beverage
+﻿public class Americano : Beverage
 {
-    private int _menunumber = 1;
-    private string _name = "아메리카노";
-    private int _cost = 2000;
-    public static int _count = 0;
-    private int totalPrice;
-    private const int discounCondition = 2;
-    private const int discounMount = 1;
-    
-    public Americano()
+    static Americano()
     {
-        _count++;
-
-        if ((_count % discounCondition) == 0)
+        number = 1;
+        name = "아메리카노";
+        cost = 2000;
+    }
+    
+    public string Name
+    {
+        get
         {
-            totalPrice = (_cost * _count) - discounMount;
-        }
-        else
-        {
-            totalPrice = (_cost * _count);
+            return name;
         }
         
-        PrintInfo();
-    }
-
-    public int TotalPrice
-    {
-        get { return totalPrice; }
-    }
-
-    public string Name
-    {
-        get { return _name; }
-    }
-    public int Cost
-    {
-        get { return _cost; }
     }
     
-    public int MenuNumber
+    public static void PrintMenu()
     {
-        get { return _menunumber; }
+        Console.WriteLine($"[{category}] {number}. {name}  가격: {cost}원 ");
     }
     
-    void PrintInfo()
-    {
-        Console.WriteLine($"[할인 품목]");
-        Console.WriteLine($"({discounCondition}개를 구매하시면 {discounMount}개가 무료)");
-        Console.WriteLine($"{MenuNumber}, {Name}[{MenuGroup}]  가격:  {Cost}원");
-        Console.WriteLine("을 선택하셨습니다.");
-    }
-  
 }
 
-public class Cafflatte : Beverage
+public class CafeLatte : Beverage
 {
-    private int _menunumber = 2;
-    private string _name = "카페라떼";
-    private int _cost = 2000;
-    public static int _count = 0;
-    private int totalPrice;
-    
-    public Cafflatte()
+    static CafeLatte()
     {
-        _count++;
-        totalPrice = _cost *  _count;
-        PrintInfo();
-    }
-
-    public int TotalPrice
-    {
-        get { return totalPrice; }
+        number = 2;
+        name = "카페라떼";
+        cost = 3000;
     }
     
     public string Name
     {
-        get { return _name; }
-    }
-    public int Cost
-    {
-        get { return _cost; }
-    }
-    public int MenuNumber
-    {
-        get { return _menunumber; }
+        get
+        {
+            return name;
+        }
+        
     }
     
-    void PrintInfo()
+    public static void PrintMenu()
     {
-        Console.WriteLine($"{MenuNumber}, {Name}[{MenuGroup}]  가격:  {Cost}원");
-        Console.WriteLine("을 선택하셨습니다.");
+        Console.WriteLine($"[{category}] {number}. {name}  가격: {cost}원 ");
     }
- 
+    
 }
 
 public class IceTea : Beverage
 {
-    private int _menunumber = 3;
-    private string _name = "아이스티";
-    private int _cost = 3000;
-    public static int _count = 0;
-    private int totalPrice;
-    public IceTea()
+    static IceTea()
     {
-        _count++;
-        totalPrice = _cost *  _count;
-        PrintInfo();
-    }
-
-    public int TotalPrice
-    {
-        get { return totalPrice; }
+        number = 3;
+        name = "아이스티";
+        cost = 3000;
     }
     public string Name
     {
-        get { return _name; }
+        get
+        {
+            return name;
+        }
+        
     }
-    public int Cost
+    public static void PrintMenu()
     {
-        get { return _cost; }
-    }
-    public int MenuNumber
-    {
-        get { return _menunumber; }
-    }
-    
-    void PrintInfo()
-    {
-        Console.WriteLine($"{MenuNumber}, {Name}[{MenuGroup}]  가격:  {Cost}원");
-        Console.WriteLine("을 선택하셨습니다.");
+        Console.WriteLine($"[{category}] {number}. {name}  가격: {cost}원 ");
     }
     
 }
 
 public class GreenTea : Beverage
 {
-    private int _menunumber = 4;
-    private string _name = "녹차";
-    private int _cost = 2500;
-    public static int _count = 0;
-    private int totalPrice;
-    public GreenTea()
+    static GreenTea()
     {
-        _count++;
-        totalPrice = _cost *  _count;
-        PrintInfo();
-    }
-
-    public int TotalPrice
-    {
-        get { return totalPrice; }
+        number = 4;
+        name = "녹차";
+        cost = 2500;
     }
     public string Name
     {
-        get { return _name; }
+        get
+        {
+            return name;
+        }
+        
     }
-    public int Cost
+    
+    public static void PrintMenu()
     {
-        get { return _cost; }
-    }
-    public int MenuNumber
-    {
-        get { return _menunumber; }
-    }
-    void PrintInfo()
-    {
-        Console.WriteLine($"{MenuNumber}, {Name}[{MenuGroup}]  가격:  {Cost}원");
-        Console.WriteLine("을 선택하셨습니다.");
+        Console.WriteLine($"[{category}] {number}. {name}  가격: {cost}원 ");
     }
     
 }
 
 public class ChocoLatte : Beverage
 {
-    private int _menunumber = 5;
-    private string _name = "쵸코라떼";
-    private int _cost = 3500;
-    public static int _count = 0;
-    private int totalPrice;
-    public ChocoLatte()
+    static ChocoLatte()
     {
-        _count++;
-        totalPrice = _cost *  _count;
-        PrintInfo();
+        number = 5;
+        name = "쵸코라떼";
+        cost = 3500;
     }
-
-    public int TotalPrice
-    {
-        get { return totalPrice; }
-    }
+    
     public string Name
     {
-        get { return _name; }
+        get
+        {
+            return name;
+        }
+        
     }
-    public int Cost
+    public static void PrintMenu()
     {
-        get { return _cost; }
+        Console.WriteLine($"[{category}] {number}. {name}  가격: {cost}원 ");
     }
-    public int MenuNumber
-    {
-        get { return _menunumber; }
-    }
-    void PrintInfo()
-    {
-        Console.WriteLine($"{MenuNumber}, {Name}[{MenuGroup}]  가격:  {Cost}원");
-        Console.WriteLine("을 선택하셨습니다.");
-    }
+    
 }

@@ -8,24 +8,25 @@ public class Program
     const string shopName = "MG컴포잭다방 천호점";
     int customerMoney = 10000;
     int actionSelct;
-    List<MenuItem> Cart = new List<MenuItem>();
     
-    actionSelct = ActionMenu();
-    switch (actionSelct)
-    {
-        case 1:
-            break;
-        case 2:
-            break;
-        case 3:
-            break;
-        case 4:
-            break;
-        default:
-            break;
-    }
+     
+    
+   
     
   }
+
+  public static void PrintAllMenu()
+  {
+      Americano.PrintMenu();
+      CafeLatte.PrintMenu();
+      IceTea.PrintMenu();
+      GreenTea.PrintMenu();
+      ChocoLatte.PrintMenu();
+      Cookie.PrintMenu();
+      SaltBread.PrintMenu();
+      Waffle.PrintMenu();
+  }
+      
 
   public static int ActionMenu()
   {
@@ -48,6 +49,10 @@ public class Program
   {
       
   }
+  
+  
+
+
   
   
 }
