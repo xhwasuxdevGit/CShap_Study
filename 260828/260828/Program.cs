@@ -6,10 +6,11 @@ public class Program
   public static void Main()
   {
     const string shopName = "MG컴포잭다방 천호점";
-    int customerMoney = 10000;
-    int actionSelct;
+   int actionSelct;
     
-     
+     Customer c1 = new Customer(10000);
+     c1.InputMenu();
+     c1.BuyCart();
     
    
     

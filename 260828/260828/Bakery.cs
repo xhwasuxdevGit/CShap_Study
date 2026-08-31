@@ -8,6 +8,15 @@ public class Cookie : Bakery
         name = "쿠키";
         cost = 1000;
     }
+    public string Name
+    {
+        get { return name; }
+    }
+
+    public int Cost
+    {
+        get { return cost; }
+    }
     
     public static void PrintMenu()
     {
@@ -24,6 +33,15 @@ public class SaltBread : Bakery
         name = "소금빵";
         cost = 2000;
     }
+    public string Name
+    {
+        get { return name; }
+    }
+
+    public int Cost
+    {
+        get { return cost; }
+    }
     
     public static void PrintMenu()
     {
@@ -39,6 +57,15 @@ public class Waffle : Bakery
         number = 8;
         name = "와플";
         cost = 1500;
+    }
+    public string Name
+    {
+        get { return name; }
+    }
+
+    public int Cost
+    {
+        get { return cost; }
     }
     
     public static void PrintMenu()

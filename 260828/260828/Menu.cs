@@ -17,17 +17,39 @@ public abstract class MenuItem
     {
         get { return name; }
     }
-    
+
+    public int Cost
+    {
+        get { return cost; }
+    }
 }
 
 public abstract class Beverage : MenuItem
 {
     protected static Category category =  Category.음료;
+    public string Name
+    {
+        get { return name; }
+    }
+
+    public int Cost
+    {
+        get { return cost; }
+    }
 }
 
 public abstract class Bakery : MenuItem
 {
     protected static Category category =  Category.베이커리;
+    public string Name
+    {
+        get { return name; }
+    }
+
+    public int Cost
+    {
+        get { return cost; }
+    }
 }
 
 

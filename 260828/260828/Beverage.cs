@@ -9,11 +9,12 @@
     
     public string Name
     {
-        get
-        {
-            return name;
-        }
-        
+        get { return name; }
+    }
+
+    public int Cost
+    {
+        get { return cost; }
     }
     
     public static void PrintMenu()
@@ -34,11 +35,12 @@ public class CafeLatte : Beverage
     
     public string Name
     {
-        get
-        {
-            return name;
-        }
-        
+        get { return name; }
+    }
+
+    public int Cost
+    {
+        get { return cost; }
     }
     
     public static void PrintMenu()
@@ -58,11 +60,12 @@ public class IceTea : Beverage
     }
     public string Name
     {
-        get
-        {
-            return name;
-        }
-        
+        get { return name; }
+    }
+
+    public int Cost
+    {
+        get { return cost; }
     }
     public static void PrintMenu()
     {
@@ -81,11 +84,12 @@ public class GreenTea : Beverage
     }
     public string Name
     {
-        get
-        {
-            return name;
-        }
-        
+        get { return name; }
+    }
+
+    public int Cost
+    {
+        get { return cost; }
     }
     
     public static void PrintMenu()
@@ -106,11 +110,12 @@ public class ChocoLatte : Beverage
     
     public string Name
     {
-        get
-        {
-            return name;
-        }
-        
+        get { return name; }
+    }
+
+    public int Cost
+    {
+        get { return cost; }
     }
     public static void PrintMenu()
     {
