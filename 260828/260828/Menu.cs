@@ -50,11 +50,6 @@ public abstract class Bakery : MenuItem
     {
         get { return cost; }
     }
-
-    public Category MenuType
-    {
-       get { return category; }
-    }
 }
 
 

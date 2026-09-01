@@ -5,6 +5,7 @@ using System.Collections.Generic;
 public class Customer
 {
     private int money;
+    private int menuNumber;
     private int totalPrice;
     private int change;
     private List<MenuItem> cart = new List<MenuItem>();
@@ -17,8 +18,7 @@ public class Customer
 
     public void InputMenu()
     {
-      
-        int menuNumber = ConsoleInput.ReadIntInRange("선택하실 메뉴 번호를 입력해 주세요 ", 1, 8);
+        int menuNumber = ConsoleInput.ReadIntInRange("메뉴 번호를 입력해 주세요 ", 1, 8);
         int menuMount = ConsoleInput.ReadIntInRange("갯수를 입력해주세요 ", 1, 5);
 
         for (int i = 0; i < menuMount; i++)
@@ -69,7 +69,6 @@ public class Customer
     public void CartClear()
     {
         Console.Clear();
-        Console.WriteLine("담은 메뉴를 모두 삭제했습니다.");
 
     }
 
