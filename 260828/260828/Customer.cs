@@ -20,6 +20,7 @@ public class Customer
     {
         int menuNumber = ConsoleInput.ReadIntInRange("메뉴 번호를 입력해 주세요 ", 1, 8);
         int menuMount = ConsoleInput.ReadIntInRange("갯수를 입력해주세요 ", 1, 5);
+        Console.WriteLine();
 
         for (int i = 0; i < menuMount; i++)
         {
@@ -63,12 +64,16 @@ public class Customer
         
         Console.WriteLine();
         Console.WriteLine($"장바구니에 담긴 메뉴: {cart.Count}개 - 총 {totalPrice}원");
+        Console.WriteLine();
+        
 
     }
 
     public void CartClear()
     {
         Console.Clear();
+        Console.WriteLine("담은 메뉴를 모두 삭제했습니다.");
+        Console.WriteLine();
 
     }
 
@@ -78,10 +83,12 @@ public class Customer
         {
             change = money - totalPrice;
             Console.WriteLine($"결제금액은 {totalPrice}원 입니다. 거스름돈은 {change}원 입니다");
+            Console.WriteLine();
         }
         else
         {
             Console.WriteLine("소지금이 부족합니다.");
+            Console.WriteLine();
         }
 
     }
