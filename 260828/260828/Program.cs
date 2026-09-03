@@ -8,28 +8,38 @@ public class Program
       int selectedKioskMenu;
       Customer c1 = new Customer(10000);
       selectedKioskMenu = PrinKioskMenu();
-      switch (selectedKioskMenu)
+      
+      if (selectedKioskMenu == 1)
       {
-          case 1:
-              c1.InputMenu();
+          c1.InputMenu();
+          while (selectedKioskMenu != 3)
+          {
               PrinKioskMenu();
-              break;
-          case 2:
-              c1.CartClear();
-              PrinKioskMenu();
-              break;
-          case 3:
-              c1.BuyCart();
-              PrinKioskMenu();
-              break;
-          case 4:
-              Console.WriteLine("직원만 사용가능한 메뉴 입니다");
-              PrinKioskMenu();
-              break;
-          default:
-              break;
+          }
       }
-   
+    else if (selectedKioskMenu == 2)
+      {
+          c1.CartClear();
+          while (selectedKioskMenu != 3)
+          {
+              PrinKioskMenu();
+          }
+      }
+      else if (selectedKioskMenu == 3)
+      {
+          c1.BuyCart();
+      }
+      else if (selectedKioskMenu == 4)
+      {
+          Console.WriteLine("마감정산은 직원만 사용할수 있습니다.");
+          while (selectedKioskMenu == 3)
+          {
+              PrinKioskMenu();
+          }
+      }
+      
+    
+      
 
 
 
