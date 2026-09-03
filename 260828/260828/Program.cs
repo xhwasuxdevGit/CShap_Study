@@ -9,35 +9,21 @@ public class Program
       Customer c1 = new Customer(10000);
       selectedKioskMenu = PrinKioskMenu();
       
-      if (selectedKioskMenu == 1)
+      while (selectedKioskMenu != 3)
       {
-          c1.InputMenu();
-          while (selectedKioskMenu != 3)
+          PrinKioskMenu();
+          int loopKioskMenu = PrinKioskMenu();
+          switch (loopKioskMenu)
           {
-              PrinKioskMenu();
+              
           }
+         
       }
-    else if (selectedKioskMenu == 2)
-      {
-          c1.CartClear();
-          while (selectedKioskMenu != 3)
-          {
-              PrinKioskMenu();
-          }
-      }
-      else if (selectedKioskMenu == 3)
+
+      if (selectedKioskMenu == 3)
       {
           c1.BuyCart();
       }
-      else if (selectedKioskMenu == 4)
-      {
-          Console.WriteLine("마감정산은 직원만 사용할수 있습니다.");
-          while (selectedKioskMenu == 3)
-          {
-              PrinKioskMenu();
-          }
-      }
-      
     
       
 
