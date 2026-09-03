@@ -5,19 +5,49 @@ public class Program
   
   public static void Main()
   {
-      int selectedKioskMenu;
+      int firstselectedKiosk;
       Customer c1 = new Customer(10000);
-      selectedKioskMenu = PrinKioskMenu();
+      firstselectedKiosk = PrinKioskMenu();
       
-      while (selectedKioskMenu != 3)
+      while (firstselectedKiosk != 3)
       {
           PrinKioskMenu();
-          int loopKioskMenu = PrinKioskMenu();
-          switch (loopKioskMenu)
+          int loopKiosk = PrinKioskMenu();
+          if (loopKiosk == 1)
           {
-              
+              c1.InputMenu();
           }
+          else if (loopKiosk == 2)
+          {
+              c1.CartClear();
+          }
+          else if (loopKiosk == 4)
+          {
+              Console.WriteLine("마감 정산은 직원만 선택 가능합니다.");
+              Console.WriteLine("");
+          }
+          
+          
+          /*
+          switch (selectedKioskMenu)
+          {
+              case 1:
+                  c1.InputMenu();
+                  break;
+              case 2:
+                  c1.CartClear();
+                  break;
+              case 4:
+                  Console.WriteLine("마감 정산은 직원만 선택 가능합니다.");
+                  Console.WriteLine("");
+                  break;
+              default:
+                  break;
+          }
+          */
+
          
+
       }
 
       if (selectedKioskMenu == 3)
