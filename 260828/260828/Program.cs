@@ -13,11 +13,10 @@ public class Program
         
         EnterCustomer(customers[0]);
         Console.WriteLine("");
-        
         Console.WriteLine("두번째 손님 입장");
         EnterCustomer(customers[1]);
         
-        // 마감 절차 시작
+        // 마감 절차
         int closeShop = PrinKioskMenu();
 
         for (int i = 0; i < customers.Count; i++)
@@ -33,7 +32,7 @@ public class Program
             }
             else
             {
-                Console.WriteLine("직원은 마감정산 메뉴만 선택할 수 있습니다.");
+                Console.WriteLine("직원 마감정산 메뉴만 선택할 수 있습니다.");
             }
         
 

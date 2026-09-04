@@ -1,7 +1,7 @@
 ﻿public class Americano : Beverage
 {
-    private static int count = 0;
-    public Americano()
+    private static int count;
+    static Americano()
     {
         number = 1;
         name = "아메리카노";
@@ -13,6 +13,7 @@
             cost = cost - (2000 * ((count / 2) -1));
         }
     }
+    
     public string Name
     {
         get { return name; }
@@ -23,7 +24,7 @@
         get { return cost; }
     }
     
-    public void PrintMenu()
+    public static void PrintMenu()
     {
         Console.WriteLine($"[{category}] {number}. {name}  가격: {cost}원 ");
     }
@@ -32,7 +33,7 @@
 
 public class CafeLatte : Beverage
 {
-    public CafeLatte()
+    static CafeLatte()
     {
         number = 2;
         name = "카페라떼";
@@ -58,7 +59,7 @@ public class CafeLatte : Beverage
 
 public class IceTea : Beverage
 {
-    public IceTea()
+    static IceTea()
     {
         number = 3;
         name = "아이스티";
@@ -82,7 +83,7 @@ public class IceTea : Beverage
 
 public class GreenTea : Beverage
 {
-    public GreenTea()
+    static GreenTea()
     {
         number = 4;
         name = "녹차";
@@ -107,7 +108,7 @@ public class GreenTea : Beverage
 
 public class ChocoLatte : Beverage
 {
-    public ChocoLatte()
+    static ChocoLatte()
     {
         number = 5;
         name = "쵸코라떼";

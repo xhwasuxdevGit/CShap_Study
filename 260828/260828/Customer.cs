@@ -18,7 +18,6 @@ public class Customer
 
     public void InputMenu()
     {
-        MenuItem.PrintAllMenu();
         int menuNumber = ConsoleInput.ReadIntInRange("메뉴 번호를 입력해 주세요 ", 1, 8);
         int menuMount = ConsoleInput.ReadIntInRange("갯수를 입력해주세요 ", 1, 5);
 
@@ -90,7 +89,6 @@ public class Customer
             change = money - totalPrice;
             Console.WriteLine($"결제금액은 {totalPrice}원 입니다. 거스름돈은 {change}원 입니다");
             Console.WriteLine();
-            cart.Clear();
         }
         else
         {
