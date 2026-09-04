@@ -2,11 +2,18 @@
 
 public class Cookie : Bakery
 {
+    private static int count = 0;
+    //5개이상 구매시 반값
     static Cookie()
     {
         number = 6;
         name = "쿠키";
         cost = 1000;
+        count++;
+        if (count > 4)
+        {
+            cost = cost / 2;
+        }
     }
     public string Name
     {

@@ -1,11 +1,20 @@
 ﻿public class Americano : Beverage
 {
+    private static int count = 0;
     static Americano()
     {
         number = 1;
         name = "아메리카노";
         cost = 2000;
+        count++;
+        // 2+1 구현
+        if (count % 2 == 0)
+        {
+            cost = cost - (2000 * ((count / 2) -1));
+        }
     }
+  
+    
     
     public string Name
     {
