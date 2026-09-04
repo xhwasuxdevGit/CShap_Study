@@ -35,35 +35,19 @@ public class Program
             {
                 Console.WriteLine("직원은 마감정산 메뉴만 선택할 수 있습니다.");
             }
-
-
-
-
-
-
-
+        
 
     }
 
     // 함수 호출하면 뒤따르는 손님의 메뉴담기가 제대로 안이루어짐
   // 뭘입력하더라도 와플이 담기는것으로보아 스태틱으로 선언한게 문제인거 같은데...
-  public static void PrintAllMenu()
-  {
-      Console.WriteLine("------------------------------");
-      Americano.PrintMenu();
-      CafeLatte.PrintMenu();
-      IceTea.PrintMenu();
-      GreenTea.PrintMenu();
-      ChocoLatte.PrintMenu();
-      Cookie.PrintMenu();
-      SaltBread.PrintMenu();
-      Waffle.PrintMenu();
-      Console.WriteLine("------------------------------");
-  }
+
 
 
   public static void EnterCustomer(Customer customer)
   {
+     
+      
       int selectedKiosk =  PrinKioskMenu();
       
       while (selectedKiosk != 3)
