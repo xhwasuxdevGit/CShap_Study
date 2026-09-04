@@ -18,9 +18,9 @@ public class Customer
 
     public void InputMenu()
     {
-       int menuNumber = ConsoleInput.ReadIntInRange("메뉴 번호를 입력해 주세요 ", 1, 8);
-       int menuMount = ConsoleInput.ReadIntInRange("갯수를 입력해주세요 ", 1, 5);
-       Console.WriteLine();
+        int menuNumber = ConsoleInput.ReadIntInRange("메뉴 번호를 입력해 주세요 ", 1, 8);
+        int menuMount = ConsoleInput.ReadIntInRange("갯수를 입력해주세요 ", 1, 5);
+        Console.WriteLine();
 
         for (int i = 0; i < menuMount; i++)
         {
@@ -54,6 +54,7 @@ public class Customer
                     break;
             }
         }
+
         Console.WriteLine($"[선택한 메뉴 목록]");
         for (int i = 0; i < cart.Count; i++)
         {
@@ -61,12 +62,17 @@ public class Customer
             totalPrice += cart[i].Cost;
 
         }
-        
+
         Console.WriteLine($"장바구니에 담긴 메뉴: {cart.Count}개 - 총 {totalPrice}원");
         Console.WriteLine();
-        
-
     }
+
+    public int TotalPrice
+    {
+        get { return totalPrice; }
+    }
+    
+    
 
     public void CartClear()
     {

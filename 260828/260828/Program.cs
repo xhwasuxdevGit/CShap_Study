@@ -2,60 +2,38 @@
 using System;
 public class Program
 {
-  
-  public static void Main()
-  {
-      int firstselectedKiosk;
-      Customer c1 = new Customer(10000);
-      firstselectedKiosk = PrinKioskMenu();
-      
-      while (firstselectedKiosk != 3)
-      {
-          PrinKioskMenu();
-          int loopKiosk = PrinKioskMenu();
-          if (loopKiosk == 1)
-          {
-              c1.InputMenu();
-          }
-          else if (loopKiosk == 2)
-          {
-              c1.CartClear();
-          }
-          else if (loopKiosk == 4)
-          {
-              Console.WriteLine("마감 정산은 직원만 선택 가능합니다.");
-              Console.WriteLine("");
-          }
-          
-          
-          /*
-          switch (selectedKioskMenu)
-          {
-              case 1:
-                  c1.InputMenu();
-                  break;
-              case 2:
-                  c1.CartClear();
-                  break;
-              case 4:
-                  Console.WriteLine("마감 정산은 직원만 선택 가능합니다.");
-                  Console.WriteLine("");
-                  break;
-              default:
-                  break;
-          }
-          */
 
-         
+    public static void Main()
+    {
 
-      }
+        List<Customer> customers = new List<Customer>();
+        int totalSales = 0;
+        customers.Add(new Customer(10000));
+        customers.Add(new Customer(5000));
+        
+        EnterCustomer(customers[0]);
+        Console.WriteLine("");
+        Console.WriteLine("두번째 손님 입장");
+        EnterCustomer(customers[1]);
+        
+        // 마감 절차
+        int closeShop = PrinKioskMenu();
 
-      if (selectedKioskMenu == 3)
-      {
-          c1.BuyCart();
-      }
-    
-      
+        for (int i = 0; i < customers.Count; i++)
+        {
+            totalSales += customers[i].TotalPrice;
+        }
+
+        if (closeShop == 4)
+            {
+                Console.WriteLine("");
+                Console.WriteLine("[정산 내역]");
+                Console.WriteLine($"총 판매 건수: {customers.Count}건  /  총 판매 금액: {totalSales}원 입니다.");
+            }
+            else
+            {
+                Console.WriteLine("직원 마감정산 메뉴만 선택할 수 있습니다.");
+            }
 
 
 
@@ -63,9 +41,10 @@ public class Program
 
 
 
-  }
-    
-  // 함수 호출하면 뒤따르는 손님의 메뉴담기가 제대로 안이루어짐
+
+    }
+
+    // 함수 호출하면 뒤따르는 손님의 메뉴담기가 제대로 안이루어짐
   // 뭘입력하더라도 와플이 담기는것으로보아 스태틱으로 선언한게 문제인거 같은데...
   public static void PrintAllMenu()
   {
@@ -80,8 +59,40 @@ public class Program
       Waffle.PrintMenu();
       Console.WriteLine("------------------------------");
   }
-  
 
+
+  public static void EnterCustomer(Customer customer)
+  {
+      int selectedKiosk =  PrinKioskMenu();
+      
+      while (selectedKiosk != 3)
+      {
+
+            
+          if (selectedKiosk == 1)
+          {
+              customer.InputMenu();
+          }
+          else if (selectedKiosk == 2)
+          {
+              customer.CartClear();
+          }
+          else if (selectedKiosk == 4)
+          {
+              Console.WriteLine("마감 정산은 직원만 선택 가능합니다.");
+              Console.WriteLine("");
+          }
+
+          selectedKiosk = PrinKioskMenu();
+          
+      }
+
+      if (selectedKiosk == 3)
+      {
+          customer.BuyCart();
+      }
+  }
+  
   public static int PrinKioskMenu()
   {
       const string SHOP_NAME = "MG컴포잭다방 천호점";
@@ -96,12 +107,6 @@ public class Program
       
       
   }
-
-
-  
-  
-
-
   
   
 }
