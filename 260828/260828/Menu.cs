@@ -12,6 +12,7 @@ public abstract class MenuItem
     protected static int number = 0;
     protected static string name = "없음";
     protected static int cost = 0;
+    
     public string Name
     {
         get { return name; }
@@ -52,5 +53,7 @@ public abstract class Bakery : MenuItem
     }
 
 }
+
+public class MenuSheet: MenuItem
 
 
