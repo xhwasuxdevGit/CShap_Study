@@ -7,21 +7,8 @@
         name = "아메리카노";
         cost = 2000;
         category = Category.음료;
-        count++;
-
-        if (count > 2)
-        {
-            cost = 1500;
-        }
-    
-        
     }
     
-    public int Number
-    {
-        get { return number; }
-    }
-
     public string Name
     {
         get { return name; }
@@ -31,15 +18,27 @@
     {
         get { return cost; }
     }
-    
-    public Category _Category
-    {
-        get { return category; }
-    }
 
     public override void PrintMenu()
     {
         Console.WriteLine($"[{category}] {number}. {name}  가격: {cost}원 (3잔 이상 구매시 개당 1500원)");
+    }
+    
+    public override int CalculatePrice(int quantity)
+    {
+        int totalPrice = 0;
+        int discountCost = 1500;
+
+        if (quantity > 2)
+        {
+            totalPrice = quantity * discountCost; 
+        }
+        else
+        {
+            totalPrice = quantity * cost; 
+        }
+       
+        return totalPrice;
     }
 }
 
@@ -50,12 +49,8 @@ public class CafeLatte : MenuItem
         number = 2;
         name = "카페라떼";
         cost = 3000;
-       category = Category.음료;
+        category = Category.음료;
     
-    }
-    public int Number
-    {
-        get { return number; }
     }
 
     public string Name
@@ -67,10 +62,12 @@ public class CafeLatte : MenuItem
     {
         get { return cost; }
     }
-
-    public Category _Category
+    
+    public override int CalculatePrice(int quantity)
     {
-        get { return category; }
+        int totalPrice = 0;
+        totalPrice = quantity * cost; 
+        return totalPrice;
     }
 
 }
@@ -86,10 +83,6 @@ public class IceTea : MenuItem
         category = Category.음료;
        
     }
-    public int Number
-    {
-        get { return number; }
-    }
 
     public string Name
     {
@@ -100,12 +93,13 @@ public class IceTea : MenuItem
     {
         get { return cost; }
     }
-
-    public Category _Category
-    {
-        get { return category; }
-    }
     
+    public override int CalculatePrice(int quantity)
+    {
+        int totalPrice = 0;
+        totalPrice = quantity * cost; 
+        return totalPrice;
+    }
     
 }
 
@@ -119,10 +113,7 @@ public class GreenTea : MenuItem
         name = "녹차";
         cost = 2500;
         category = Category.음료;
-        }
-    public int Number
-    {
-        get { return number; }
+        
     }
 
     public string Name
@@ -134,10 +125,12 @@ public class GreenTea : MenuItem
     {
         get { return cost; }
     }
-
-    public Category _Category
+    
+    public override int CalculatePrice(int quantity)
     {
-        get { return category; }
+        int totalPrice = 0;
+        totalPrice = quantity * cost; 
+        return totalPrice;
     }
 
 }
@@ -152,12 +145,8 @@ public class ChocoLatte : MenuItem
         name = "쵸코라떼";
         cost = 3500;
         category = Category.음료;
-        count++;
-        totalCost  = count * cost;
-    }
-    public int Number
-    {
-        get { return number; }
+        
+        
     }
 
     public string Name
@@ -170,10 +159,11 @@ public class ChocoLatte : MenuItem
         get { return cost; }
     }
     
-   
-    public Category _Category
+    public override int CalculatePrice(int quantity)
     {
-        get { return category; }
+        int totalPrice = 0;
+        totalPrice = quantity * cost; 
+        return totalPrice;
     }
-    
+
 }

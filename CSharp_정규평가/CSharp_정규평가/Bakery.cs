@@ -2,7 +2,6 @@
 
 public class Cookie : MenuItem
 {
-    private static int count = 0;
     //5개이상 구매시 반값
     public Cookie()
     {
@@ -10,19 +9,8 @@ public class Cookie : MenuItem
         name = "쿠키";
         cost = 1000;
         category = Category.베이커리;
-        count++;
-        if (count > 4)
-        {
-            cost = (cost / 2);
-        }
-        
-
+    
     }
-    public int Number
-    {
-        get { return number; }
-    }
-
     public string Name
     {
         get { return name; }
@@ -32,10 +20,28 @@ public class Cookie : MenuItem
     {
         get { return cost; }
     }
-
-    public Category _Category
+    
+    public override void PrintMenu()
     {
-        get { return category; }
+        Console.WriteLine($"[{category}] {number}. {name}  가격: {cost}원 (5개 이상 구매시 50%)");
+    }
+
+    public override int CalculatePrice(int quantity)
+    {
+        int totalPrice = 0;
+        int discountedPrice = (cost / 2);
+        
+        if (quantity > 4)
+        {
+            totalPrice = quantity * discountedPrice;
+            return totalPrice;
+        }
+
+        else
+        {
+            totalPrice = quantity * cost;
+        }
+        return totalPrice;
     }
  
  
@@ -52,10 +58,6 @@ public class SaltBread : MenuItem
         category = Category.베이커리;
       
     }
-    public int Number
-    {
-        get { return number; }
-    }
 
     public string Name
     {
@@ -66,15 +68,14 @@ public class SaltBread : MenuItem
     {
         get { return cost; }
     }
-    public Category _Category
+    
+    public override int CalculatePrice(int quantity)
     {
-        get { return category; }
+        int totalPrice = 0;
+        totalPrice = quantity * cost; 
+        return totalPrice;
     }
     
-    public override void PrintMenu()
-    {
-        Console.WriteLine($"[{category}] {number}. {name}  가격: {cost}원 (5개 이상 구매시 50%)");
-    }
 }
 
 public class Waffle : MenuItem
@@ -87,10 +88,6 @@ public class Waffle : MenuItem
         category = Category.베이커리;
       
     }
-    public int Number
-    {
-        get { return number; }
-    }
 
     public string Name
     {
@@ -101,10 +98,13 @@ public class Waffle : MenuItem
     {
         get { return cost; }
     }
-    public Category _Category
-    {
-        get { return category; }
-    }
     
+    public override int CalculatePrice(int quantity)
+    {
+        int totalPrice = 0;
+        totalPrice = quantity * cost; 
+        return totalPrice;
+    }
+
     
 }

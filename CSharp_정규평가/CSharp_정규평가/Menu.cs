@@ -11,8 +11,7 @@ public abstract class MenuItem
     protected int number;
     protected string name;
     protected int cost;
-    protected int totalCost;
-    protected static Category category;
+    protected Category category;
     
     public MenuItem()
     {
@@ -21,10 +20,6 @@ public abstract class MenuItem
         cost = 0;
         category = Category.None;
 
-    }
-    public int Number
-    {
-        get { return number; }
     }
 
     public string Name
@@ -37,20 +32,12 @@ public abstract class MenuItem
         get { return cost; }
     }
     
-    public Category _Category
-    {
-        get { return category; }
-    }
-
-    public int TotalCost
-    {
-        get { return totalCost; }
-    }
-
     public virtual void PrintMenu()
     {
         Console.WriteLine($"[{category}] {number}. {name}  가격: {cost}원 ");
     }
+    
+    public abstract int CalculatePrice(int quantity);
 
 }
 
