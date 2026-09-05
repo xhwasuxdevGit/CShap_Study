@@ -11,8 +11,8 @@ public class Program
         customers.Add(new Customer(5000));
         
         EnterCustomer(customers[0]);
-        Console.WriteLine("");
-        Console.WriteLine("두번째 손님 입장");
+        Console.Clear();
+        Console.WriteLine("[두번째 손님 입장]");
         EnterCustomer(customers[1]);
         
         // 마감 절차
@@ -27,7 +27,7 @@ public class Program
             {
                 Console.WriteLine("");
                 Console.WriteLine("[정산 내역]");
-                Console.WriteLine($"총 판매 건수: {customers.Count}건  /  총 판매 금액: {totalSales}원 입니다.");
+                Console.WriteLine($"총 주문 건수: {customers.Count}개  /  총 판매 금액: {totalSales}원 입니다.");
             }
             else
             {
@@ -47,7 +47,6 @@ public class Program
       
       while (selectedKiosk != 3)
       {
-
             
           if (selectedKiosk == 1)
           {
@@ -55,6 +54,7 @@ public class Program
           }
           else if (selectedKiosk == 2)
           {
+              
               customer.CartClear();
           }
           else if (selectedKiosk == 4)
@@ -80,9 +80,9 @@ public class Program
       Console.WriteLine($"<{SHOP_NAME}> 키오스크 ");
       Console.WriteLine("------------------------------");
       Console.WriteLine("[1. 메뉴 선택하기]  [2.장바구니 비우기]  [3.결제하기]  [4.마감정산(직원전용)]");
-      int kioskNumber = ConsoleInput.ReadIntInRange("하시고 싶은 일을 선택해주세요 ", 1, 4);
       Console.WriteLine();
-   
+      int kioskNumber = ConsoleInput.ReadIntInRange("하시고 싶은 일을 선택해주세요 ", 1, 4);
+      ConsoleInput.Pause();
       return kioskNumber;
       
       

@@ -68,12 +68,12 @@ public class MenuSheet
         menuSheet.Add(new Cookie());
         menuSheet.Add(new SaltBread());
         menuSheet.Add(new Waffle());
-
+        Console.Clear();
         for (int i = 0; i < menuSheet.Count; i++)
         {
             menuSheet[i].PrintMenu();
         }
-        
+        Console.WriteLine($"---------------------------------------------------------------------------");
         menuSheet.Clear();
     }
     
